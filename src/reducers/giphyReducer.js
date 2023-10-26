@@ -1,5 +1,6 @@
 const initialState = {
     searchedGiphy: '',
+    giphyURL: '',
     isLoading: false,
 }
 
@@ -15,9 +16,14 @@ const giphyReducer = (state = initialState, action) => {
                 ...state,
                 isLoading: !state.isLoading,
             }
+        case 'SET_GIPHY_URL':
+            return {
+                ...state,
+                giphyURL: action.payload,
+            };
         default:
             return state;
     }
-}
+};
 
 export default giphyReducer;
