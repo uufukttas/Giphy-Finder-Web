@@ -26,7 +26,7 @@ const Form = ({ searchGiphy, setGiphyURL }) => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-md shadow-md">
+    <div className="max-w-md mx-auto p-6 bg-white rounded-md shadow-md w-full">
       <form onSubmit={handleSubmit}>
         <div className="mb-4">
           <label htmlFor="username" className="block text-gray-700 font-bold mb-2">Type your context:</label>

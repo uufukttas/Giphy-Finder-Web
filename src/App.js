@@ -4,7 +4,7 @@ import GiphyContainer from './components/GiphyContainer';
 
 const App = () => {
   return (
-    <div className="App">
+    <div className="App flex flex-col items-center justify-center h-screen">
       <Form />
       <GiphyContainer />
     </div>
