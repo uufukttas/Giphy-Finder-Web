@@ -2,7 +2,7 @@ const initialState = {
     searchedGiphy: '',
     giphyURL: '',
     isLoading: false,
-}
+};
 
 const giphyReducer = (state = initialState, action) => {
     switch (action.type) {

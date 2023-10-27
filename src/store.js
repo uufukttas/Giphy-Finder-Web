@@ -1,5 +1,5 @@
 import { createStore, combineReducers } from 'redux';
-import giphyReducer from './reducers/giphyReducer'
+import giphyReducer from './reducers/giphyReducer';
 
 const rootReducer = combineReducers({
   giphyFinder: giphyReducer,

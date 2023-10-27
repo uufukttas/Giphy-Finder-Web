@@ -9,6 +9,6 @@ const App = () => {
       <GiphyContainer />
     </div>
   );
-}
+};
 
 export default App;

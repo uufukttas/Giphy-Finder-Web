@@ -6,8 +6,8 @@ import { searchGiphy, setGiphyURL } from '../actions/giphyActions';
 const Form = ({ searchGiphy, setGiphyURL }) => {
   const getGiphy = async word => {
     try {
-      const response = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=${process.env.REACT_APP_GIPHY_REQUEST_API_KEY}&q=${word}&limit=1&offset=0&rating=g&lang=en&bundle=messaging_non_clips`);
-      const giphyURL = response.data.data[0].images.original.url;
+      const response = await axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${process.env.REACT_APP_GIPHY_REQUEST_API_KEY}&tag=${word}&rating=g`);
+      const giphyURL = response.data.data.images.original.url;
 
       setGiphyURL(giphyURL);
     } catch (error) {
