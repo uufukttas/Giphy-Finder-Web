@@ -3,8 +3,9 @@ export const searchGiphy = searchedGiphy => ({
     payload: searchedGiphy,
 });
 
-export const isLoading = bool => ({
+export const isLoading = value => ({
     type: 'IS_LOADING',
+    payload: value,
 });
 
 export const setGiphyURL = giphyURL => ({

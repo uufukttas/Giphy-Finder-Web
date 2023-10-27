@@ -14,7 +14,7 @@ const giphyReducer = (state = initialState, action) => {
         case 'IS_LOADING':
             return {
                 ...state,
-                isLoading: !state.isLoading,
+                isLoading: action.payload,
             }
         case 'SET_GIPHY_URL':
             return {

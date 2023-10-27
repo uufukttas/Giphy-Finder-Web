@@ -1,15 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { searchGiphy, setGiphyURL } from '../actions/giphyActions';
+import { searchGiphy, setGiphyURL, isLoading } from '../actions/giphyActions';
 
-const Form = ({ searchGiphy, setGiphyURL }) => {
+const Form = ({ searchGiphy, setGiphyURL, isLoading }) => {
   const getGiphy = async word => {
     try {
       const response = await axios.get(`https://api.giphy.com/v1/gifs/random?api_key=${process.env.REACT_APP_GIPHY_REQUEST_API_KEY}&tag=${word}&rating=g`);
       const giphyURL = response.data.data.images.original.url;
 
       setGiphyURL(giphyURL);
+      isLoading(false);
     } catch (error) {
       console.log(error);
     }
@@ -21,6 +22,7 @@ const Form = ({ searchGiphy, setGiphyURL }) => {
     const form = event.target;
     const word = form.elements[0]?.value;
 
+    isLoading(true);
     getGiphy(word);
     searchGiphy(word);
   };
@@ -60,6 +62,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = {
   searchGiphy,
   setGiphyURL,
+  isLoading,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Form);
